@@ -12,6 +12,7 @@
 |-----|-------|-----|-----|
 | latest | Master | v1.15.1 | alpine 3.9|
 | scratch | scratch | v1.15.1 | scratch |
+| v1.15.1 | v1.15.1 | v1.15.1 | alpine 3.9|
 
 # 运行
 ```
