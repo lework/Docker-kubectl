@@ -3,6 +3,8 @@
 ![docker hub](https://img.shields.io/docker/pulls/lework/kubectl.svg?style=flat-square)
 ![docker hub](https://img.shields.io/docker/stars/lework/kubectl.svg?style=flat-square)
 [![Build Status](https://travis-ci.com/lework/Docker-kubectl.svg?branch=master)](https://travis-ci.com/lework/Docker-kubectl)
+[![](https://images.microbadger.com/badges/image/lework/kubectl.svg)](http://microbadger.com/images/lework/kubectl "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/lework/kubectl.svg)](http://microbadger.com/images/lework/kubectl "Get your own version badge on microbadger.com")
 
 基于scratch或alpine基础镜像的kubectl客户端
 
