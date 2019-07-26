@@ -1,0 +1,33 @@
+sudo: required
+language: python
+python:
+  - '2.7'
+install:
+  - git remote -v
+  - git ls-remote --heads origin
+before_install:
+  - openssl aes-256-cbc -K $encrypted_bbd230db0088_key -iv $encrypted_bbd230db0088_iv -in github_deploy_key.enc -out /tmp/github_deploy_key -d
+  - chmod 600 /tmp/github_deploy_key
+  - eval $(ssh-agent -s)
+  - ssh-add /tmp/github_deploy_key
+script:
+  - |
+    v=$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)
+    echo $v
+    b=$(git ls-remote --heads origin | grep ${v} | wc -l)
+    if [[ $b == 0 ]]; then
+      git config --global user.email "lework@yeah.net"
+      git config --global user.name "lework"
+      git remote rm origin
+      git remote add origin git@github.com:lework/Docker-kubectl.git
+      git pull
+      git checkout -b $v
+      sed -i "s/\\(K8S_VERSION=\\).*/\\1$v/g" Dockerfile
+      sed -i "/| scratch |/a\\| $v | $v | $v | alpine 3.9|" README.md
+      git add -A
+      git commit -m "add $v"
+      git push -u origin $v
+      git checkout master
+      git merge $v
+      git push origin master
+    fi
