@@ -29,7 +29,7 @@ script:
         git pull
         git checkout -b $t
         sed -i "s/\\(K8S_VERSION=\\).*/\\1$t/g" Dockerfile
-        sed -i "/| scratch |/a\\| $t | $t | $t | alpine 3.9| $(date +"%Y-%d-%y %H:%M:%S")|" README.md
+        sed -i "/| scratch |/a\\| $t | $t | $t | alpine 3.9 |" README.md
         git add -A
         git commit -m "add $t"
         git push -u origin $t
