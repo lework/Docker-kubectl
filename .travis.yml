@@ -33,8 +33,10 @@ script:
         git add -A
         git commit -m "add $t"
         git push -u origin $t
-        git checkout master
-        git merge $t
-        git push origin master
+        if [[ "$t" == "$v" ]]; then
+          git checkout master
+          git merge $t
+          git push origin master
+        fi
       fi
     done
