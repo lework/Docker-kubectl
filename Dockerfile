@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:3.13
 LABEL maintainer "Lework <lework@yeah.net>"
 
 ARG K8S_VERSION=v1.20.5
