@@ -14,6 +14,7 @@
 |-----|-------|-----|-----|
 | latest | Master | stable | alpine 3.9|
 | scratch | scratch | v1.15.1 | scratch |
+| v1.25.1 | v1.25.1 | v1.25.1 | alpine 3.13 |
 | v1.22.14 | v1.22.14 | v1.22.14 | alpine 3.13 |
 | v1.25.0 | v1.25.0 | v1.25.0 | alpine 3.13 |
 | v1.24.4 | v1.24.4 | v1.24.4 | alpine 3.13 |
