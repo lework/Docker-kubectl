@@ -1,7 +1,7 @@
 FROM alpine:3.13
 LABEL maintainer "Lework <lework@yeah.net>"
 
-ARG K8S_VERSION=v1.28.9
+ARG K8S_VERSION=v1.29.4
 
 RUN set -x \
     && apk --update upgrade \
